@@ -24,26 +24,46 @@
         <div id="art-gallery">
             <div class="art-piece" data-era="0" style="left: 400px;">
                 <div class="art-hint">▲ HOLD UP</div>
+                <div class="wall-art-meta">
+                    <h3 class="wall-art-title"></h3>
+                    <p class="wall-art-author"></p>
+                </div>
                 <img class="art-canvas" src="museum_arts/art1.png">
                 <img class="art-frame" src="museum_arts/frame.png">
             </div>
             <div class="art-piece" data-era="1" style="left: 1000px;">
                 <div class="art-hint">▲ HOLD UP</div>
+                <div class="wall-art-meta">
+                    <h3 class="wall-art-title"></h3>
+                    <p class="wall-art-author"></p>
+                </div>
                 <img class="art-canvas" src="museum_arts/art2.png">
                 <img class="art-frame" src="museum_arts/frame.png">
             </div>
             <div class="art-piece" data-era="2" style="left: 1600px;">
                 <div class="art-hint">▲ HOLD UP</div>
+                <div class="wall-art-meta">
+                    <h3 class="wall-art-title"></h3>
+                    <p class="wall-art-author"></p>
+                </div>
                 <img class="art-canvas" src="museum_arts/art3.png">
                 <img class="art-frame" src="museum_arts/frame.png">
             </div>
             <div class="art-piece" data-era="3" style="left: 2200px;">
                 <div class="art-hint">▲ HOLD UP</div>
+                <div class="wall-art-meta">
+                    <h3 class="wall-art-title"></h3>
+                    <p class="wall-art-author"></p>
+                </div>
                 <img class="art-canvas" src="museum_arts/art4.png">
                 <img class="art-frame" src="museum_arts/frame.png">
             </div>
             <div class="art-piece" data-era="4" style="left: 2800px;">
                 <div class="art-hint">▲ HOLD UP</div>
+                <div class="wall-art-meta">
+                    <h3 class="wall-art-title"></h3>
+                    <p class="wall-art-author"></p>
+                </div>
                 <img class="art-canvas" src="museum_arts/art5.png">
                 <img class="art-frame" src="museum_arts/frame.png">
             </div>
@@ -65,20 +85,43 @@
     </div>
 
     <div id="focus-overlay">
-        <div id="focused-art-container">
-            <div class="art-glow"></div>
-            <div id="slider-mask">
-                <div id="slider-track"></div>
-            </div>
-            <img id="focused-frame" src="museum_arts/frame.png">
-        </div>
         
         <div id="era-info">
             <h2 id="era-title">Era Title</h2>
             <p id="era-focus"><strong>Focus:</strong> <span>...</span></p>
-            <p id="era-members"><strong>Members:</strong> <span>...</span></p>
             <div class="swipe-hint">◀ Press A or D to swipe gallery ▶</div>
         </div>
+
+        <div id="focus-layout">
+            <div id="focus-left">
+                <div id="focused-art-container">
+                    <div class="art-glow"></div>
+                    <div id="slider-mask">
+                        <div id="slider-track"></div>
+                    </div>
+                    <img id="focused-frame" src="museum_arts/frame.png">
+                </div>
+                <div id="art-details">
+                    <h2 id="art-title">Artwork Title</h2>
+                    <h4 id="art-author">Author Name • Year</h4>
+                </div>
+            </div>
+            
+            <div id="focus-right">
+                <p id="art-description">Loading historical data...</p>
+            </div>
+        </div>
+
+        <div id="super-zoom-ui">
+            <div class="sz-header">
+                <h2 id="sz-title">Artwork Title</h2>
+                <span id="sz-author">Author Name • Year</span>
+            </div>
+            <div class="sz-footer">
+                <p id="sz-desc">Description goes here...</p>
+            </div>
+        </div>
+
     </div>
 
     <audio id="bg-music" loop><source src="mp3/beneaththerain.mp3" type="audio/mpeg"></audio>
@@ -86,7 +129,7 @@
 
     <div id="volume-control">
         <span id="mute-icon">🔊</span>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
+        <input range-input" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
     </div>
 
     <script src="script.js"></script>

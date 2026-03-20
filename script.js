@@ -1,4 +1,3 @@
-// --- Cinematic Intro ---
 window.onload = () => {
     setTimeout(() => {
         document.getElementById('title-container').classList.remove('intro');
@@ -6,26 +5,121 @@ window.onload = () => {
     }, 1500); 
 };
 
+const cameraStage = document.getElementById('camera-stage');
 const playerContainer = document.getElementById('player-container');
 const playerSprite = document.getElementById('player-sprite');
 const playerReflection = document.getElementById('player-reflection');
 const dynamicLighting = document.getElementById('dynamic-lighting');
 
-const WALK_SPEED = 3;
-const RUN_SPEED = 7;
+const WALK_SPEED = 4;
+const RUN_SPEED = 9;
 const RUN_DELAY_MS = 1000; 
+const WORLD_WIDTH = 3500;
+let posX = 1750; 
 
-let posX = window.innerWidth / 2;
 const keys = {};
 const pressTimes = {};
 
+// --- UPDATED ERA DATA ---
+// --- FULLY UPDATED ERA DATA ---
 const eraData = [
-    { title: "1. Pre-Colonial Era", focus: "Indigenous culture, Baybayin, and tribal leadership.", members: "Salonga, Ogalino, Alegre, Bañanola, Albero, Maranan, Cao", images: ["museum_arts/art1.png", "museum_arts/art1.png", "museum_arts/art1.png"] },
-    { title: "2. Spanish Era", focus: "Colonial architecture, the Propaganda Movement, and the Revolution.", members: "Intiola, Gamba, Pagarita, Boza, Aviñante, Gatchalian, Namoco", images: ["museum_arts/art2.png", "museum_arts/art2.png", "museum_arts/art2.png"] },
-    { title: "3. American Era", focus: "The Thomasites, public education, and the Commonwealth government.", members: "Magdura, Delacruz, Lachica, Tolentino, Gabatin, Alarcon, Caayupan", images: ["museum_arts/art3.png", "museum_arts/art3.png", "museum_arts/art3.png"] },
-    { title: "4. Post-War Era", focus: "Rebuilding the nation, the Third Republic, and industrialization.", members: "Vidallon, Canaman, Martin, Zapanta, Colina, Morillo, Ersando", images: ["museum_arts/art4.png", "museum_arts/art4.png", "museum_arts/art4.png"] },
-    { title: "5. Contemporary Era", focus: "Digital transformation, modern civil movements, and current events.", members: "Villaruel, Perseveranda, Esmerio, Crisostomo, Cardoza, Padilla", images: ["museum_arts/art5.png", "museum_arts/art5.png", "museum_arts/art5.png"] }
+    { 
+        title: "1. Pre-Colonial Era", 
+        focus: "Indigenous culture, Baybayin, and tribal leadership.", 
+        members: "Salonga, Ogalino, Alegre, Bañanola, Albero, Maranan, Cao", 
+        images: [
+            "museum_arts/pre-colonial/painting/art1.jpeg", 
+            "museum_arts/pre-colonial/painting/art2.jpg", 
+            "museum_arts/pre-colonial/painting/art3.jpg", 
+            "museum_arts/pre-colonial/painting/art4.jpg", 
+            "museum_arts/pre-colonial/painting/art5.jpg",
+            "museum_arts/pre-colonial/painting/T_NALAK.webp"
+        ] 
+    },
+    { 
+        title: "2. Spanish Era", 
+        focus: "Colonial architecture, the Propaganda Movement, and the Revolution.", 
+        members: "Intiola, Gamba, Pagarita, Boza, Aviñante, Gatchalian, Namoco", 
+        images: [
+            "museum_arts/spanish/painting/art1.jpg", 
+            "museum_arts/spanish/painting/art2.jpg", 
+            "museum_arts/spanish/painting/art3.jpeg", 
+            "museum_arts/spanish/painting/art4.jpg", 
+            "museum_arts/spanish/painting/art5.jpg", 
+            "museum_arts/spanish/painting/art6.jpg"
+        ] 
+    },
+    { 
+        title: "3. American Era", 
+        focus: "The Thomasites, public education, and the Commonwealth government.", 
+        members: "Magdura, Delacruz, Lachica, Tolentino, Gabatin, Alarcon, Caayupan", 
+        // 6 new American images
+        images: [
+            "museum_arts/american/painting/art1.jpg",
+            "museum_arts/american/painting/art2.jpg",
+            "museum_arts/american/painting/art3.jpg",
+            "museum_arts/american/painting/art4.jpg",
+            "museum_arts/american/painting/art5.jpg",
+            "museum_arts/american/painting/art6.jpg"
+        ] 
+    },
+    { 
+        title: "4. Post-War Era", 
+        focus: "Rebuilding the nation, the Third Republic, and industrialization.", 
+        members: "Vidallon, Canaman, Martin, Zapanta, Colina, Morillo, Ersando", 
+        // 6 new Post-War images
+        images: [
+            "museum_arts/post-war/painting/art1.jpg",
+            "museum_arts/post-war/painting/art2.jpg",
+            "museum_arts/post-war/painting/art3.jpg",
+            "museum_arts/post-war/painting/art4.jpg",
+            "museum_arts/post-war/painting/art5.jpg",
+            "museum_arts/post-war/painting/art6.jpg"
+        ] 
+    },
+    { 
+        title: "5. Contemporary Era", 
+        focus: "Digital transformation, modern civil movements, and current events.", 
+        members: "Villaruel, Perseveranda, Esmerio, Crisostomo, Cardoza, Padilla", 
+        // 6 new Contemporary images (Note: art6 is a .png and no /painting/ subfolder)
+        images: [
+            "museum_arts/contemporary/art1.jpg",
+            "museum_arts/contemporary/art2.jpg",
+            "museum_arts/contemporary/art3.jpg",
+            "museum_arts/contemporary/art4.jpg",
+            "museum_arts/contemporary/art5.jpg",
+            "museum_arts/contemporary/art6.png"
+        ] 
+    }
 ];
+
+// --- NEW: DYNAMIC WALL PAINTINGS LOGIC ---
+let wallImageIndices = eraData.map(() => 0); // Array to keep track of current image index per era
+
+// 1. Instantly set the wall pictures to the first image of their era when the site loads
+document.querySelectorAll('.art-piece').forEach((piece) => {
+    const eraIndex = piece.getAttribute('data-era');
+    const canvas = piece.querySelector('.art-canvas');
+    if (eraData[eraIndex] && eraData[eraIndex].images.length > 0) {
+        canvas.src = eraData[eraIndex].images[0];
+    }
+});
+
+// 2. Automatically change the picture every 3000ms (3 seconds)
+setInterval(() => {
+    document.querySelectorAll('.art-piece').forEach((piece) => {
+        const eraIndex = piece.getAttribute('data-era');
+        const canvas = piece.querySelector('.art-canvas');
+        const images = eraData[eraIndex].images;
+        
+        // Only cycle if there are multiple images available
+        if (images && images.length > 1) { 
+            wallImageIndices[eraIndex] = (wallImageIndices[eraIndex] + 1) % images.length;
+            canvas.src = images[wallImageIndices[eraIndex]];
+        }
+    });
+}, 3000);
+
 
 let isFocusing = false;
 let focusHoldStartTime = 0; 
@@ -37,7 +131,6 @@ const sfxFootsteps = document.getElementById('sfx-footsteps');
 const volumeSlider = document.getElementById('volume-slider');
 const muteIcon = document.getElementById('mute-icon');
 
-// Initialize starting volumes at 20%
 volumeSlider.value = 0.2;
 bgMusic.volume = 0.2;
 sfxFootsteps.volume = 1.0; 
@@ -131,8 +224,8 @@ function gameLoop() {
 
     let pCenter = posX + (playerContainer.offsetWidth / 2); let closestArt = null; let closestIndex = null;
     document.querySelectorAll('.art-piece').forEach(art => {
-        let artRect = art.getBoundingClientRect();
-        if (Math.abs(pCenter - (artRect.left + artRect.width / 2)) < 120) {
+        let artX = parseInt(art.style.left); 
+        if (Math.abs(pCenter - artX) < 120) {
             art.classList.add('near'); closestArt = art; closestIndex = art.getAttribute('data-era'); 
         } else { art.classList.remove('near'); }
     });
@@ -170,7 +263,6 @@ function gameLoop() {
                 loadFocusData(closestIndex); 
                 focusOverlay.classList.add('active'); 
             }
-            // SUPER ZOOM TRIGGER
             if (isFocusing && (Date.now() - focusHoldStartTime > 3000)) {
                 focusOverlay.classList.add('super-zoom');
             }
@@ -191,8 +283,14 @@ function gameLoop() {
         }
     }
 
-    posX += currentSpeedX; posX = Math.max(0, Math.min(posX, window.innerWidth - playerContainer.offsetWidth));
+    posX += currentSpeedX; 
+    posX = Math.max(0, Math.min(posX, WORLD_WIDTH - playerContainer.offsetWidth));
     playerContainer.style.left = `${posX}px`;
+
+    let cameraX = (window.innerWidth / 2) - posX - (playerContainer.offsetWidth / 2);
+    let minCameraX = window.innerWidth - WORLD_WIDTH;
+    cameraX = Math.max(minCameraX, Math.min(0, cameraX));
+    cameraStage.style.transform = `translateX(${cameraX}px)`;
 
     let pRect = playerContainer.getBoundingClientRect();
     dynamicLighting.style.setProperty('--light-x', `${pRect.left + pRect.width / 2}px`);
@@ -203,10 +301,11 @@ function gameLoop() {
 
 function createParticles() {
     const container = document.getElementById('particles-container');
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < 150; i++) { 
         let p = document.createElement('div'); p.classList.add('particle');
         let size = Math.random() * 4 + 1; p.style.width = p.style.height = `${size}px`;
-        p.style.left = `${Math.random() * 100}vw`; p.style.animationDuration = `${Math.random() * 10 + 8}s`;
+        p.style.left = `${Math.random() * WORLD_WIDTH}px`; 
+        p.style.animationDuration = `${Math.random() * 10 + 8}s`;
         p.style.animationDelay = `-${Math.random() * 15}s`; container.appendChild(p);
     }
 }

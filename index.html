@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Virtual Museum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="black-screen"></div>
+
+    <div id="museum-wall"></div>
+    <div id="museum-floor"></div>
+
+    <div id="art-gallery">
+        <div class="art-piece" data-era="0" style="left: 15%;">
+            <div class="art-hint">▲ HOLD UP</div>
+            <img class="art-canvas" src="museum_arts/art1.png">
+            <img class="art-frame" src="museum_arts/frame.png">
+        </div>
+        <div class="art-piece" data-era="1" style="left: 32.5%;">
+            <div class="art-hint">▲ HOLD UP</div>
+            <img class="art-canvas" src="museum_arts/art2.png">
+            <img class="art-frame" src="museum_arts/frame.png">
+        </div>
+        <div class="art-piece" data-era="2" style="left: 50%;">
+            <div class="art-hint">▲ HOLD UP</div>
+            <img class="art-canvas" src="museum_arts/art3.png">
+            <img class="art-frame" src="museum_arts/frame.png">
+        </div>
+        <div class="art-piece" data-era="3" style="left: 67.5%;">
+            <div class="art-hint">▲ HOLD UP</div>
+            <img class="art-canvas" src="museum_arts/art4.png">
+            <img class="art-frame" src="museum_arts/frame.png">
+        </div>
+        <div class="art-piece" data-era="4" style="left: 85%;">
+            <div class="art-hint">▲ HOLD UP</div>
+            <img class="art-canvas" src="museum_arts/art5.png">
+            <img class="art-frame" src="museum_arts/frame.png">
+        </div>
+    </div>
+
+    <div id="particles-container"></div>
+    <div id="dynamic-lighting"></div>
+    <div id="vignette"></div>
+
+    <div id="title-container" class="intro">
+        <h1 id="title">Virtual Museum</h1>
+        <p id="subtitle">Made by BSCS 1-5</p>
+    </div>
+
+    <div id="player-container">
+        <img id="player-reflection" src="char_images/S.png" alt="Reflection">
+        <div id="player-shadow"></div>
+        <img id="player-sprite" src="char_images/S.png" alt="Player Character">
+    </div>
+
+    <div id="mobile-controls">
+        <div class="mobile-btn" id="btn-left">◀</div>
+        <div class="mobile-btn" id="btn-up">▲</div>
+        <div class="mobile-btn" id="btn-right">▶</div>
+    </div>
+
+    <div id="focus-overlay">
+        <div id="focused-art-container">
+            <div class="art-glow"></div>
+            <div id="slider-mask">
+                <div id="slider-track"></div>
+            </div>
+            <img id="focused-frame" src="museum_arts/frame.png">
+        </div>
+        
+        <div id="era-info">
+            <h2 id="era-title">Era Title</h2>
+            <p id="era-focus"><strong>Focus:</strong> <span>...</span></p>
+            <p id="era-members"><strong>Members:</strong> <span>...</span></p>
+            <div class="swipe-hint">◀ Press A or D to swipe gallery ▶</div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop><source src="mp3/beneaththerain.mp3" type="audio/mpeg"></audio>
+    <audio id="sfx-footsteps" loop><source src="mp3/footsteps.mp3" type="audio/mpeg"></audio>
+
+    <div id="volume-control">
+        <span id="mute-icon">🔊</span>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

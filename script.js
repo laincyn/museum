@@ -24,104 +24,93 @@ const eraData = [
     { 
         title: "1. Pre-Colonial Era", focus: "Indigenous culture, Baybayin, and tribal leadership.", 
         images: [
-            { src: "museum_arts/pre-colonial/painting/art1.jpeg", title: "T'nalak Cloth", author: "T'boli Weavers", age: "Pre-Colonial", desc: "A traditional sacred cloth woven by the T'boli people in South Cotabato, representing their dreams and beliefs." },
-            { src: "museum_arts/pre-colonial/painting/art2.jpg", title: "Pintados", author: "Visayan Indigenous Peoples", age: "Pre-Colonial", desc: "Refers to the beautifully tattooed indigenous peoples of the Visayas, with ink depicting bravery and social status." },
-            { src: "museum_arts/pre-colonial/painting/art3.jpg", title: "Peñablanca Petroglyphs", author: "Early Inhabitants", age: "Pre-Colonial", desc: "Ancient charcoal drawings on cave walls in Cagayan, depicting human-like figures and local wildlife." },
-            { src: "museum_arts/pre-colonial/painting/art4.jpg", title: "Bul-ul", author: "Ifugao Carvers", age: "Pre-Colonial", desc: "Carved wooden figures used to guard the rice crop by the Ifugao peoples of Northern Luzon." },
-            { src: "museum_arts/pre-colonial/painting/art5.jpg", title: "Angono Petroglyphs", author: "Early Inhabitants", age: "~2000 BC", desc: "The oldest known work of art in the Philippines, consisting of 127 human and animal figures engraved on a rock wall." },
-            { src: "museum_arts/pre-colonial/painting/T_NALAK.webp", title: "Anda Peninsula Petroglyphs", author: "Early Inhabitants", age: "Pre-Colonial", desc: "Red hematite paintings found in the caves of Bohol, showcasing early artistic expression in the islands." }
+            { src: "museum_arts/pre-colonial/painting/T_NALAK.webp", title: "T'nalak Cloth", author: "T'boli Weavers", age: "Pre-Colonial", desc: "A traditional sacred cloth woven by the T'boli people in South Cotabato, representing their dreams and beliefs." },
+            { src: "museum_arts/pre-colonial/painting/art5.jpg", title: "Pintados", author: "Visayan Indigenous Peoples", age: "Pre-Colonial", desc: "Refers to the beautifully tattooed indigenous peoples of the Visayas, with ink depicting bravery and social status." },
+            { src: "museum_arts/pre-colonial/painting/art1.jpeg", title: "Peñablanca Petroglyphs", author: "Early Inhabitants", age: "Pre-Colonial", desc: "Ancient charcoal drawings on cave walls in Cagayan, depicting human-like figures and local wildlife." },
+            { src: "museum_arts/pre-colonial/painting/art3.jpg", title: "Bul-ul", author: "Ifugao Carvers", age: "Pre-Colonial", desc: "Carved wooden figures used to guard the rice crop by the Ifugao peoples of Northern Luzon." },
+            { src: "museum_arts/pre-colonial/painting/art2.jpg", title: "Angono Petroglyphs", author: "Early Inhabitants", age: "~2000 BC", desc: "The oldest known work of art in the Philippines, consisting of 127 human and animal figures engraved on a rock wall." },
+            { src: "museum_arts/pre-colonial/painting/art4.jpg", title: "Anda Peninsula Petroglyphs", author: "Early Inhabitants", age: "Pre-Colonial", desc: "Red hematite paintings found in the caves of Bohol, showcasing early artistic expression in the islands." }
         ] 
     },
     { 
         title: "2. Spanish Era", focus: "Colonial architecture, the Propaganda Movement, and the Revolution.", 
         images: [
             { src: "museum_arts/spanish/painting/art1.jpg", title: "The Blood Compact", author: "Juan Luna", age: "1886", desc: "Depicts the 1565 Sandugo between Spanish explorer Miguel López de Legazpi and Datu Sikatuna of Bohol." },
-            { src: "museum_arts/spanish/painting/art2.jpg", title: "Spoliarium", author: "Juan Luna", age: "1884", desc: "A massive, emotionally charged masterpiece showing fallen gladiators being dragged into the Roman amphitheater's basement." },
-            { src: "museum_arts/spanish/painting/art3.jpeg", title: "Las Virgenes Cristianas", author: "Félix Resurrección Hidalgo", age: "1884", desc: "Portrays a tragic scene of Christian virgins being mocked in Ancient Rome, symbolizing colonial oppression." },
-            { src: "museum_arts/spanish/painting/art4.jpg", title: "Las Damas Romanas", author: "Juan Luna", age: "1882", desc: "Depicts the leisurely life of Roman women, showcasing Luna's mastery of classical European themes." },
-            { src: "museum_arts/spanish/painting/art5.jpg", title: "La Barca de Aqueronte", author: "Félix Resurrección Hidalgo", age: "1887", desc: "A dark and dramatic interpretation of Dante's Inferno, showing damned souls crossing the river Acheron." },
+            { src: "museum_arts/spanish/painting/art5.jpg", title: "Spoliarium", author: "Juan Luna", age: "1884", desc: "A massive, emotionally charged masterpiece showing fallen gladiators being dragged into the Roman amphitheater's basement." },
+            { src: "museum_arts/spanish/painting/art4.jpg", title: "Las Virgenes Cristianas", author: "Félix Resurrección Hidalgo", age: "1884", desc: "Portrays a tragic scene of Christian virgins being mocked in Ancient Rome, symbolizing colonial oppression." },
+            { src: "museum_arts/spanish/painting/art3.jpeg", title: "Las Damas Romanas", author: "Juan Luna", age: "1882", desc: "Depicts the leisurely life of Roman women, showcasing Luna's mastery of classical European themes." },
+            { src: "museum_arts/spanish/painting/art2.jpg", title: "La Barca de Aqueronte", author: "Félix Resurrección Hidalgo", age: "1887", desc: "A dark and dramatic interpretation of Dante's Inferno, showing damned souls crossing the river Acheron." },
             { src: "museum_arts/spanish/painting/art6.jpg", title: "El Asesinato", author: "Félix Resurrección Hidalgo", age: "1904", desc: "Illustrates the dramatic assassination of Governor-General Fernando Manuel de Bustamante by friars." }
         ] 
     },
     { 
         title: "3. American Era", focus: "The Thomasites, public education, and the Commonwealth government.", 
         images: [
-            { src: "museum_arts/american/painting/art1.jpg", title: "The Builders", author: "Victorio Edades", age: "1928", desc: "A groundbreaking work that introduced modernism to the Philippines, moving away from idealized rural landscapes." },
-            { src: "museum_arts/american/painting/art2.jpg", title: "Planting Rice", author: "Fernando Amorsolo", age: "1922", desc: "Captures the romanticized, sun-drenched beauty of rural Filipino life and agricultural labor." },
-            { src: "museum_arts/american/painting/art3.jpg", title: "Mango Gatherers", author: "Fernando Amorsolo", age: "1936", desc: "A classic example of Amorsolo's mastery of light (chiaroscuro) highlighting idyllic provincial scenes." },
-            { src: "museum_arts/american/painting/art4.jpg", title: "Maiden in a Stream", author: "Fernando Amorsolo", age: "1921", desc: "Celebrates the innocent and natural beauty of the Filipina set against a lush, rural backdrop." },
-            { src: "museum_arts/american/painting/art5.jpg", title: "Dalagang Bukid", author: "Fernando Amorsolo", age: "1958", desc: "Portrays the quintessential 'Dalagang Bukid' (country maiden) with a bright smile and traditional attire." },
-            { src: "museum_arts/american/painting/art6.jpg", title: "Afternoon Meal", author: "Fernando Amorsolo", age: "1939", desc: "A warm and inviting painting depicting a communal rest period during a hard day's harvest." }
+            { src: "museum_arts/american/painting/art6.jpg", title: "The Builders", author: "Victorio Edades", age: "1928", desc: "A groundbreaking work that introduced modernism to the Philippines, moving away from idealized rural landscapes." },
+            { src: "museum_arts/american/painting/art5.jpg", title: "Planting Rice", author: "Fernando Amorsolo", age: "1922", desc: "Captures the romanticized, sun-drenched beauty of rural Filipino life and agricultural labor." },
+            { src: "museum_arts/american/painting/art4.jpg", title: "Mango Gatherers", author: "Fernando Amorsolo", age: "1936", desc: "A classic example of Amorsolo's mastery of light (chiaroscuro) highlighting idyllic provincial scenes." },
+            { src: "museum_arts/american/painting/art3.jpg", title: "Maiden in a Stream", author: "Fernando Amorsolo", age: "1921", desc: "Celebrates the innocent and natural beauty of the Filipina set against a lush, rural backdrop." },
+            { src: "museum_arts/american/painting/art2.jpg", title: "Dalagang Bukid", author: "Fernando Amorsolo", age: "1958", desc: "Portrays the quintessential 'Dalagang Bukid' (country maiden) with a bright smile and traditional attire." },
+            { src: "museum_arts/american/painting/art1.jpg", title: "Afternoon Meal", author: "Fernando Amorsolo", age: "1939", desc: "A warm and inviting painting depicting a communal rest period during a hard day's harvest." }
         ] 
     },
     { 
         title: "4. Post-War Era", focus: "Rebuilding the nation, the Third Republic, and industrialization.", 
         images: [
-            { src: "museum_arts/post-war/painting/art1.jpg", title: "Woman", author: "Willem de Kooning", age: "1950", desc: "A bold, abstract expressionist piece characterized by aggressive brushstrokes and intense emotional energy." },
-            { src: "museum_arts/post-war/painting/art2.jpg", title: "No. 5", author: "Jackson Pollock", age: "1948", desc: "A famous example of 'drip painting', showcasing the chaotic yet controlled movement of abstract expressionism." },
-            { src: "museum_arts/post-war/painting/art3.jpg", title: "Marilyn Diptych", author: "Andy Warhol", age: "1962", desc: "A pop art icon that explores celebrity culture, mass production, and mortality." },
-            { src: "museum_arts/post-war/painting/art4.jpg", title: "Flag", author: "Jasper Johns", age: "1954", desc: "Blurs the line between everyday objects and fine art, challenging the viewer to look closer at familiar symbols." },
-            { src: "museum_arts/post-war/painting/art5.jpg", title: "Campbell's Soup Cans", author: "Andy Warhol", age: "1962", desc: "Elevated a mundane consumer product to the status of high art, defining the Pop Art movement." },
-            { src: "museum_arts/post-war/painting/art6.jpg", title: "Black Square", author: "Kazimir Malevich", age: "1915", desc: "A purely non-objective, suprematist work that completely rejects traditional representation." }
+            { src: "museum_arts/post-war/painting/art6.jpg", title: "Woman", author: "Willem de Kooning", age: "1950", desc: "A bold, abstract expressionist piece characterized by aggressive brushstrokes and intense emotional energy." },
+            { src: "museum_arts/post-war/painting/art5.jpg", title: "No. 5", author: "Jackson Pollock", age: "1948", desc: "A famous example of 'drip painting', showcasing the chaotic yet controlled movement of abstract expressionism." },
+            { src: "museum_arts/post-war/painting/art4.jpg", title: "Marilyn Diptych", author: "Andy Warhol", age: "1962", desc: "A pop art icon that explores celebrity culture, mass production, and mortality." },
+            { src: "museum_arts/post-war/painting/art3.jpg", title: "Flag", author: "Jasper Johns", age: "1954", desc: "Blurs the line between everyday objects and fine art, challenging the viewer to look closer at familiar symbols." },
+            { src: "museum_arts/post-war/painting/art2.jpg", title: "Campbell's Soup Cans", author: "Andy Warhol", age: "1962", desc: "Elevated a mundane consumer product to the status of high art, defining the Pop Art movement." },
+            { src: "museum_arts/post-war/painting/art1.jpg", title: "Black Square", author: "Kazimir Malevich", age: "1915", desc: "A purely non-objective, suprematist work that completely rejects traditional representation." }
         ] 
     },
     { 
         title: "5. Contemporary Era", focus: "Digital transformation, modern civil movements, and current events.", 
         images: [
-            { src: "museum_arts/contemporary/art1.jpg", title: "Sabel in Blue", author: "Benedicto Cabrera", age: "2006", desc: "Features BenCab's signature muse, Sabel, wrapped in dynamic, flowing blue drapery." },
+            { src: "museum_arts/contemporary/art3.jpg", title: "Sabel in Blue", author: "Benedicto Cabrera", age: "2006", desc: "Features BenCab's signature muse, Sabel, wrapped in dynamic, flowing blue drapery." },
             { src: "museum_arts/contemporary/art2.jpg", title: "Hapag ng Pag-asa", author: "Joey Velasco", age: "2005", desc: "A poignant Filipino recreation of the Last Supper featuring street children instead of the apostles." },
-            { src: "museum_arts/contemporary/art3.jpg", title: "Grayground", author: "Ronald Ventura", age: "2011", desc: "A hyper-realistic and surreal masterpiece combining pop culture, graffiti, and classical techniques." },
-            { src: "museum_arts/contemporary/art4.jpg", title: "Last Trip", author: "Contemporary Artist", age: "Modern", desc: "A modern reflection on urban life, commuting, and the everyday struggles of the working class." },
+            { src: "museum_arts/contemporary/art1.jpg", title: "Grayground", author: "Ronald Ventura", age: "2011", desc: "A hyper-realistic and surreal masterpiece combining pop culture, graffiti, and classical techniques." },
+            { src: "museum_arts/contemporary/art6.png", title: "Last Trip", author: "Contemporary Artist", age: "Modern", desc: "A modern reflection on urban life, commuting, and the everyday struggles of the working class." },
             { src: "museum_arts/contemporary/art5.jpg", title: "Itak sa Puso ni Mang Juan", author: "Antipas Delotavo", age: "1978", desc: "A powerful social realist painting highlighting the oppressive weight of foreign corporate influence." },
-            { src: "museum_arts/contemporary/art6.png", title: "Fishermen", author: "Ang Kiukok", age: "1981", desc: "A dynamic, cubist-inspired piece displaying the harsh realities and struggle for survival in the fishing industry." }
+            { src: "museum_arts/contemporary/art4.jpg", title: "Fishermen", author: "Ang Kiukok", age: "1981", desc: "A dynamic, cubist-inspired piece displaying the harsh realities and struggle for survival in the fishing industry." }
         ] 
     }
 ];
 
 let wallImageIndices = eraData.map(() => 0); 
 
-// Update Wall Canvases with the object 'src' property
-// Modified to also update dynamic titles and authors on the wall
 document.querySelectorAll('.art-piece').forEach((piece) => {
     const eraIndex = piece.getAttribute('data-era');
     const canvas = piece.querySelector('.art-canvas');
-    // Select the new metadata elements
     const wallTitle = piece.querySelector('.wall-art-title');
     const wallAuthor = piece.querySelector('.wall-art-author');
 
     if (eraData[eraIndex] && eraData[eraIndex].images.length > 0) {
         const initialArt = eraData[eraIndex].images[0];
         canvas.src = initialArt.src;
-        // Set initial text
         wallTitle.innerText = initialArt.title;
         wallAuthor.innerText = initialArt.author;
     }
 });
 
-// Automatically change the picture and metadata every 3000ms (3 seconds)
 setInterval(() => {
     document.querySelectorAll('.art-piece').forEach((piece) => {
         const eraIndex = piece.getAttribute('data-era');
         const canvas = piece.querySelector('.art-canvas');
-        // Select the new metadata elements
         const wallTitle = piece.querySelector('.wall-art-title');
         const wallAuthor = piece.querySelector('.wall-art-author');
 
         const images = eraData[eraIndex].images;
         if (images && images.length > 1) { 
             wallImageIndices[eraIndex] = (wallImageIndices[eraIndex] + 1) % images.length;
-            
-            // Access the *full artwork object*
             const newArt = images[wallImageIndices[eraIndex]];
-            
-            // Update canvas and metadata in sync
             canvas.src = newArt.src;
             wallTitle.innerText = newArt.title;
             wallAuthor.innerText = newArt.author;
         }
     });
 }, 3000);
-
 
 let isFocusing = false;
 let focusHoldStartTime = 0; 
@@ -185,14 +174,12 @@ function updateSprite(imageName) {
 function updateArtworkMeta() {
     const artData = eraData[currentEraIndex].images[currentSlide];
     
-    // Normal UI Elements
     const titleEl = document.getElementById('art-title');
     const authorEl = document.getElementById('art-author');
     const descEl = document.getElementById('art-description');
     const rightPanel = document.getElementById('focus-right');
     const detailsPanel = document.getElementById('art-details');
 
-    // Super Zoom UI Elements
     const szTitle = document.getElementById('sz-title');
     const szAuthor = document.getElementById('sz-author');
     const szDesc = document.getElementById('sz-desc');
@@ -201,12 +188,10 @@ function updateArtworkMeta() {
     detailsPanel.style.opacity = 0;
 
     setTimeout(() => {
-        // Set Normal UI Text
         titleEl.innerText = artData.title;
         authorEl.innerText = `${artData.author} • ${artData.age}`;
         descEl.innerText = artData.desc;
 
-        // Set Super Zoom UI Text
         szTitle.innerText = artData.title;
         szAuthor.innerText = `${artData.author} • ${artData.age}`;
         szDesc.innerText = artData.desc;
@@ -271,8 +256,10 @@ function gameLoop() {
         if (wPressed) {
             updateSprite('W.png'); 
             if (closestArt && !isFocusing) { isFocusing = true; focusHoldStartTime = Date.now(); loadFocusData(closestIndex); focusOverlay.classList.add('active'); }
-            // SUPER ZOOM TRIGGER
-            if (isFocusing && (Date.now() - focusHoldStartTime > 3000)) { focusOverlay.classList.add('super-zoom'); }
+            
+            if (isFocusing && (Date.now() - focusHoldStartTime > 3000)) { 
+                focusOverlay.classList.add('super-zoom'); 
+            }
         } 
         else {
             if (isFocusing) {
